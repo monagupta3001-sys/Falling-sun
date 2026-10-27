@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TrackId } from '../types/hackathon';
-import { X, Sparkles, Gamepad2, Globe, Bot, ArrowRight, RotateCcw } from 'lucide-react';
+import { X, Gamepad2, Globe, Bot, ArrowRight, RotateCcw } from 'lucide-react';
 import { playClickSound } from '../utils/audio';
 
 interface TrackQuizModalProps {
@@ -25,52 +25,52 @@ export const TrackQuizModal: React.FC<TrackQuizModalProps> = ({
 
   const questions = [
     {
-      title: 'What brings you the biggest adrenaline rush while building?',
+      title: 'When you are given a fresh challenge topic, what do you want to build first?',
       options: [
         {
-          label: 'Silky smooth 60–120 FPS game physics and responsive DualSense controller haptics.',
+          label: 'A playable 2D or 3D game with fun physics, responsive controls, and sound design.',
           track: 'game-dev' as TrackId,
         },
         {
-          label: 'A sub-10ms real-time dashboard syncing thousands of live WebSocket event packets.',
+          label: 'A high-speed website or interactive web app with clean UI and real-time connectivity.',
           track: 'web-dev' as TrackId,
         },
         {
-          label: 'Watching a physical quadcopter drone autonomously navigate a lighted obstacle gate.',
+          label: 'A functional physical robot using microcontrollers, sensors, and motor drivers.',
           track: 'robotics' as TrackId,
         },
       ],
     },
     {
-      title: 'Which hardware resource on the arena floor are you most eager to command?',
+      title: 'What developer toolkit do you feel most at home with?',
       options: [
         {
-          label: 'Sony PlayStation 5 dev stations and 4K 144Hz OLED test booths.',
+          label: 'Godot, Unity, Unreal Engine, Pygame, or WebGL game engines.',
           track: 'game-dev' as TrackId,
         },
         {
-          label: 'Connecting browser WebSerial & WebBluetooth APIs to real-world edge hardware.',
+          label: 'React, Next.js, Node.js, WebSockets, Tailwind CSS, and APIs.',
           track: 'web-dev' as TrackId,
         },
         {
-          label: 'Bambu Lab high-speed 3D printers and indoor netted drone flight cage.',
+          label: 'ESP32, Arduino, Raspberry Pi, Python, C++, and hardware wiring.',
           track: 'robotics' as TrackId,
         },
       ],
     },
     {
-      title: 'What kind of project do you want to show on the main stage after 12+12 hours?',
+      title: 'What would you feel proudest demonstrating on the main stage on Day 2?',
       options: [
         {
-          label: 'A fast-paced playable game tournament where judges battle with gamepads.',
+          label: 'A live game demo where judges and attendees pick up a controller to play.',
           track: 'game-dev' as TrackId,
         },
         {
-          label: 'A distributed cloud-native ground station tracking real-world telemetry.',
+          label: 'A live website walkthrough showing snappy interactions, data flows, and design polish.',
           track: 'web-dev' as TrackId,
         },
         {
-          label: 'A live physical robotic flight or 3D-fabricated mechatronics demonstration.',
+          label: 'A real physical robot moving, sensing its environment, and performing its task.',
           track: 'robotics' as TrackId,
         },
       ],
@@ -102,22 +102,22 @@ export const TrackQuizModal: React.FC<TrackQuizModalProps> = ({
     'game-dev': {
       name: 'Game Development Track',
       icon: <Gamepad2 className="w-8 h-8 text-white" />,
-      tagline: 'You belong in the Game Dev Arena!',
-      desc: 'You have a passion for visceral interaction, tactile controller feedback, and rich graphics. You will excel on our PS5 rigs and game engine pipelines.',
+      tagline: 'You belong in Game Development!',
+      desc: 'Build a playable game based on the revealed topic using Godot, Unity, Unreal, or WebGL. (The PS5 lounge is also ready for you to play games during breaks!)',
       color: 'bg-[#d12323]',
     },
     'web-dev': {
       name: 'Web Development Track',
       icon: <Globe className="w-8 h-8 text-white" />,
-      tagline: 'You belong in the Web Dev Arena!',
-      desc: 'You think in distributed architectures, modern frontends, and realtime streams. You will build cutting-edge telemetry hubs and WebSerial hardware bridges.',
+      tagline: 'You belong in Web Development!',
+      desc: 'Build an interactive website or web application addressing the competition topic with modern UI, reactive states, and seamless APIs.',
       color: 'bg-[#0284c7]',
     },
     'robotics': {
-      name: 'Robotics & Hardware Track',
+      name: 'Robotics Track',
       icon: <Bot className="w-8 h-8 text-white" />,
-      tagline: 'You belong in the Robotics Arena!',
-      desc: 'You crave the physical realm. Autonomous flight, computer vision navigation, and rapid 3D printing of chassis and joints are your superpower.',
+      tagline: 'You belong in Robotics!',
+      desc: 'Build a functional robot using the hardware resource kit (microcontroller, sensors, motors) handed to your squad at kickoff.',
       color: 'bg-[#059669]',
     },
   }[winner];
@@ -181,7 +181,7 @@ export const TrackQuizModal: React.FC<TrackQuizModalProps> = ({
 
             <div>
               <div className="text-xs font-mono font-black uppercase text-[#d12323]">
-                RECOMMENDED ARENA FIT:
+                RECOMMENDED TRACK FIT:
               </div>
               <h4 className="font-display text-3xl font-black text-black uppercase mt-1">
                 {winnerData.name}

@@ -95,7 +95,7 @@ export const SponsorsSection: FC<SponsorsSectionProps> = ({ onOpenRegister }) =>
           <div className="flex items-center gap-3">
             <button
               onClick={() => {
-                playSound('click');
+                playClickSound();
                 onOpenRegister();
               }}
               className="bg-[#ffe600] hover:bg-white text-black font-display font-black tracking-wider text-sm uppercase px-5 py-3 border-3 border-black shadow-[4px_4px_0px_#000] hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_#000] transition-all"

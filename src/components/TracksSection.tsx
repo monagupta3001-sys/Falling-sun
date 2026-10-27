@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { HACKATHON_TRACKS } from '../data/hackathonData';
 import { TrackId, TrackInfo } from '../types/hackathon';
-import { Gamepad2, Globe, Bot, ArrowRight, CheckCircle2, Award, Wrench } from 'lucide-react';
+import { Gamepad2, Globe, Bot, ArrowRight, CheckCircle2, Wrench, Sparkles, Smile } from 'lucide-react';
 import { playClickSound, playHoverSound } from '../utils/audio';
 
 interface TracksSectionProps {
@@ -31,7 +31,7 @@ export const TracksSection: React.FC<TracksSectionProps> = ({
 
   return (
     <section id="tracks" className="py-20 bg-[#d12323] border-t-2 border-black grain-texture relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         {/* Section Header */}
         <div className="space-y-3">
           <div className="inline-block">
@@ -44,9 +44,24 @@ export const TracksSection: React.FC<TracksSectionProps> = ({
             THREE SPECIALIZED ARENAS
           </h2>
 
-          <p className="text-base sm:text-lg text-white font-bold max-w-2xl leading-relaxed">
-            Choose your focus area. Each track features dedicated mentor guidance, tailored developer stacks, and live project demonstrations on Day 2.
+          <p className="text-base sm:text-lg text-white font-bold max-w-3xl leading-relaxed">
+            At kickoff, you will be provided with an official <strong>Topic</strong> and <strong>Hardware Resources</strong>. Choose your track and build a <strong>Website</strong>, a <strong>Game</strong>, or a <strong>Robot</strong>.
           </p>
+        </div>
+
+        {/* Core Concept Banner */}
+        <div className="p-4 bg-[#fffdf8] border-2 border-black shadow-brutal flex flex-col sm:flex-row items-center justify-between gap-3 text-black">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-[#ffe600] border border-black flex items-center justify-center shrink-0">
+              <Sparkles className="w-4 h-4 text-black" />
+            </div>
+            <div className="text-xs font-mono font-bold leading-relaxed">
+              <strong className="text-[#c51c1c] uppercase">Core Rule:</strong> Every team is evaluated on the Website, Game, or Robot they engineer for the announced topic. PS5, Drones, and 3D printers are strictly just for fun and break-time recreation!
+            </div>
+          </div>
+          <span className="font-mono font-black text-[11px] bg-black text-[#ffe600] px-3 py-1 border border-black uppercase shrink-0">
+            TOPIC + HARDWARE AT KICKOFF
+          </span>
         </div>
 
         {/* 3 Tracks Switcher Buttons */}
@@ -76,7 +91,7 @@ export const TracksSection: React.FC<TracksSectionProps> = ({
                       {track.name}
                     </div>
                     <div className="text-[10px] font-mono text-slate-700 font-bold">
-                      TRACK 0{idx + 1}
+                      {idx === 0 ? 'BUILD A GAME' : idx === 1 ? 'BUILD A WEBSITE' : 'BUILD A ROBOT'}
                     </div>
                   </div>
                 </div>
@@ -112,12 +127,12 @@ export const TracksSection: React.FC<TracksSectionProps> = ({
                 {activeTrack.description}
               </p>
 
-              {/* Hardware Highlight */}
+              {/* Hardware & Resources Highlight */}
               <div className="p-4 bg-[#f6efe4] border-2 border-black flex items-start gap-3">
                 <Wrench className="w-5 h-5 text-[#c51c1c] shrink-0 mt-0.5" />
                 <div>
                   <div className="font-mono font-black text-xs uppercase text-black">
-                    OFFICIAL HARDWARE ALLOCATION:
+                    PROVIDED HARDWARE & SQUAD RESOURCES:
                   </div>
                   <div className="text-xs font-semibold text-slate-800 mt-1">
                     {activeTrack.hardwareHighlight}
@@ -125,10 +140,10 @@ export const TracksSection: React.FC<TracksSectionProps> = ({
                 </div>
               </div>
 
-              {/* Sample Prompts */}
+              {/* Sample Challenges */}
               <div className="space-y-2">
                 <div className="font-mono font-black text-xs uppercase text-black">
-                  TARGET CHALLENGES & PROMPTS:
+                  CHALLENGE OBJECTIVES (TO BE ADAPTED TO ANNOUNCED TOPIC):
                 </div>
                 {activeTrack.sampleChallenges.map((challenge, i) => (
                   <div
@@ -147,7 +162,7 @@ export const TracksSection: React.FC<TracksSectionProps> = ({
               {/* Toolchains */}
               <div>
                 <div className="font-mono font-black text-xs uppercase text-black mb-2">
-                  SUPPORTED STACKS:
+                  RECOMMENDED TOOLS & STACKS:
                 </div>
                 <div className="flex flex-wrap gap-1.5">
                   {activeTrack.techStack.map((tech) => (
@@ -164,7 +179,7 @@ export const TracksSection: React.FC<TracksSectionProps> = ({
               {/* Rubric */}
               <div>
                 <div className="font-mono font-black text-xs uppercase text-black mb-2">
-                  JUDGING CRITERIA:
+                  EVALUATION CRITERIA:
                 </div>
                 <div className="space-y-1.5">
                   {activeTrack.judgingFocus.map((crit, i) => (
@@ -176,13 +191,19 @@ export const TracksSection: React.FC<TracksSectionProps> = ({
                 </div>
               </div>
 
+              {/* Fun reminder */}
+              <div className="p-3 bg-[#ffe600] border border-black flex items-center gap-2 text-xs font-mono font-bold text-black">
+                <Smile className="w-4 h-4 text-black shrink-0" />
+                <span>PS5 lounge, drone arena & 3D prints are available anytime for fun!</span>
+              </div>
+
               {/* Register Action */}
-              <div className="pt-4 border-t-2 border-black">
+              <div className="pt-2 border-t-2 border-black">
                 <button
                   onClick={() => onRegisterWithTrack(activeTrack.id)}
                   className="w-full py-3.5 bg-[#ffe600] hover:bg-[#ffd900] text-black border-2 border-black font-mono font-black text-xs sm:text-sm uppercase tracking-wider shadow-brutal hover:translate-x-0.5 hover:translate-y-0.5 transition-transform flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <span>REGISTER FOR {activeTrack.name.toUpperCase()}</span>
+                  <span>REGISTER TO BUILD A {activeTrack.id === 'game-dev' ? 'GAME' : activeTrack.id === 'web-dev' ? 'WEBSITE' : 'ROBOT'}</span>
                   <ArrowRight className="w-4 h-4 stroke-[3]" />
                 </button>
               </div>

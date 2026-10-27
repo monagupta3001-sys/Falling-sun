@@ -23,17 +23,17 @@ export const HackerBadgeModal: React.FC<HackerBadgeModalProps> = ({
 
   const trackInfo = {
     'game-dev': {
-      title: 'GAME DEV // PS5 ACCELERATED',
+      title: 'GAME DEV // BUILD A GAME',
       badgeNum: 'TRACK 01',
       color: '#d12323',
     },
     'web-dev': {
-      title: 'WEB DEV // REALTIME TELEMETRY',
+      title: 'WEB DEV // BUILD A WEBSITE',
       badgeNum: 'TRACK 02',
       color: '#0284c7',
     },
     'robotics': {
-      title: 'ROBOTICS // DRONES & 3D FAB',
+      title: 'ROBOTICS // BUILD A ROBOT',
       badgeNum: 'TRACK 03',
       color: '#059669',
     },
@@ -95,7 +95,7 @@ export const HackerBadgeModal: React.FC<HackerBadgeModalProps> = ({
                     {registrationData.fullName}
                   </div>
                   <div className="text-xs font-mono font-bold text-slate-800 mt-1">
-                    SQUAD: <span className="text-[#d12323] font-black">{registrationData.teamName || 'SOLO'}</span>
+                    SQUAD: <span className="text-[#c51c1c] font-black">{registrationData.teamName || 'SOLO'}</span>
                   </div>
                 </div>
 
@@ -104,10 +104,10 @@ export const HackerBadgeModal: React.FC<HackerBadgeModalProps> = ({
                   {trackInfo.title}
                 </div>
 
-                {/* Hardware Allocations */}
+                {/* Fun Zones & Gear */}
                 <div className="space-y-1 mb-4">
                   <div className="text-[9px] font-mono uppercase font-bold text-slate-600">
-                    APPROVED HARDWARE ALLOCATIONS:
+                    APPROVED FUN ZONES & ACCESS:
                   </div>
                   <div className="flex flex-wrap gap-1">
                     {registrationData.hardwareRequests.slice(0, 3).map((hw, i) => (
@@ -115,7 +115,7 @@ export const HackerBadgeModal: React.FC<HackerBadgeModalProps> = ({
                         key={i}
                         className="text-[9px] font-mono font-bold px-1.5 py-0.5 bg-[#f6efe4] border border-black text-black"
                       >
-                        ✓ {hw.replace(' (PLA-CF / PETG)', '').replace(' Slot', '')}
+                        ✓ {hw.replace(' (Just for Fun)', ' (Fun Zone)')}
                       </span>
                     ))}
                   </div>
@@ -157,15 +157,15 @@ export const HackerBadgeModal: React.FC<HackerBadgeModalProps> = ({
                     <Calendar className="w-4 h-4 text-black shrink-0 mt-0.5" />
                     <div>
                       <div>12H + 12H Dual-Day Pass</div>
-                      <div className="text-[10px] text-slate-800 font-semibold">Day 1 (09-21h) · Twilight Buffer · Day 2 (09-21h)</div>
+                      <div className="text-[10px] text-slate-800 font-semibold">Day 1 (09-21h) · Overnight Pause · Day 2 (09-21h)</div>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-2">
                     <Wifi className="w-4 h-4 text-black shrink-0 mt-0.5" />
                     <div>
-                      <div>Gigabit Dev Network</div>
-                      <div className="text-[10px] text-slate-800 font-semibold">SSID: FallingSun-5G / WPA3</div>
+                      <div>Topic & Hardware Resource Kit</div>
+                      <div className="text-[10px] text-slate-800 font-semibold">Handed out at Kickoff to build Website, Game, or Robot</div>
                     </div>
                   </div>
 
@@ -180,8 +180,8 @@ export const HackerBadgeModal: React.FC<HackerBadgeModalProps> = ({
                   <div className="flex items-start gap-2">
                     <ShieldCheck className="w-4 h-4 text-black shrink-0 mt-0.5" />
                     <div>
-                      <div>Lab Safety Clearance</div>
-                      <div className="text-[10px] text-slate-800 font-semibold">Authorized for Netted Drone Cage & Bambu Lab Farm</div>
+                      <div>Fun Zones Open for Breaks</div>
+                      <div className="text-[10px] text-slate-800 font-semibold">PS5 Lounge, Drone Netted Arena & 3D Souvenir Printers</div>
                     </div>
                   </div>
                 </div>
@@ -220,7 +220,7 @@ export const HackerBadgeModal: React.FC<HackerBadgeModalProps> = ({
           onClick={onClose}
           className="w-full py-3 bg-[#ffe600] hover:bg-[#ffd900] text-black border-2 border-black font-mono font-black text-xs uppercase tracking-wider shadow-brutal cursor-pointer hover:translate-x-0.5 hover:translate-y-0.5 transition-transform"
         >
-          VIEW SQUAD ON LIVE ROSTER
+          CONFIRM BADGE & RETURN
         </button>
       </div>
     </div>

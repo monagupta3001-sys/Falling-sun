@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TrackId, RegistrationFormData } from '../types/hackathon';
-import { X, Check, ArrowRight, ArrowLeft, Gamepad2, Globe, Bot, Shield, AlertCircle } from 'lucide-react';
+import { X, Check, ArrowRight, ArrowLeft, Gamepad2, Globe, Bot, Shield, AlertCircle, Smile } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { playSuccessSound } from '../utils/audio';
 
@@ -26,7 +26,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
     teamName: '',
     teamSize: 4,
     track: initialTrack,
-    hardwareRequests: ['PlayStation 5 Dev Station'],
+    hardwareRequests: ['PlayStation 5 Gaming Lounge (Just for Fun)'],
     experienceLevel: 'Intermediate',
     projectConcept: '',
     githubUrl: '',
@@ -53,14 +53,14 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
       }
     } else if (currentStep === 3) {
       if (formData.hardwareRequests.length === 0) {
-        newErrors.hardware = 'Please select at least one hardware requirement';
+        newErrors.hardware = 'Please select at least one fun zone preference or coding-only';
       }
       if (!formData.projectConcept.trim()) {
-        newErrors.projectConcept = 'Please describe your preliminary project idea (1-2 sentences)';
+        newErrors.projectConcept = 'Please describe your preliminary focus or idea (1-2 sentences)';
       }
     } else if (currentStep === 4) {
       if (!formData.acceptRules) {
-        newErrors.acceptRules = 'You must accept the safety guidelines and 12H+12H format rules';
+        newErrors.acceptRules = 'You must accept the 12H+12H format and competition rules';
       }
     }
     setErrors(newErrors);
@@ -119,7 +119,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
               FALLING SUN 2026 REGISTRATION
             </h3>
             <p className="font-mono text-xs font-bold text-slate-800 mt-0.5">
-              STEP {step} OF 4: {step === 1 ? 'TRACK SELECTION' : step === 2 ? 'SQUAD DETAILS' : step === 3 ? 'HARDWARE LAB CHECKOUT' : 'RULES & SIZES'}
+              STEP {step} OF 4: {step === 1 ? 'TRACK SELECTION' : step === 2 ? 'SQUAD DETAILS' : step === 3 ? 'FUN ZONES & PROJECT FOCUS' : 'CONFIRMATION & SIZES'}
             </p>
           </div>
           <button
@@ -160,8 +160,8 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                         : 'bg-white text-slate-700 hover:bg-[#fff9e6]'
                     }`}
                   >
-                    <div className="font-display text-lg uppercase">SQUAD (2–4 HACKERS)</div>
-                    <div className="text-xs font-mono mt-0.5">Register your full crew</div>
+                    <div className="font-display text-lg uppercase">SQUAD (2–4 BUILDERS)</div>
+                    <div className="text-xs font-mono mt-0.5">Register with your crew</div>
                   </button>
 
                   <button
@@ -177,14 +177,14 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                     }`}
                   >
                     <div className="font-display text-lg uppercase">SOLO BUILDER</div>
-                    <div className="text-xs font-mono mt-0.5">Day 1 matching mixer</div>
+                    <div className="text-xs font-mono mt-0.5">Day 1 morning matching mixer</div>
                   </button>
                 </div>
               </div>
 
               <div>
                 <label className="block text-xs font-mono font-black text-black uppercase tracking-wider mb-2">
-                  CHOOSE PRIMARY COMPETITION TRACK:
+                  WHAT WILL YOUR SQUAD BUILD FOR THE TOPIC?
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {/* Game Dev */}
@@ -200,8 +200,8 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                     <div className="w-8 h-8 bg-[#d12323] text-white flex items-center justify-center border border-black mb-2 shadow-brutal-sm">
                       <Gamepad2 className="w-4 h-4" />
                     </div>
-                    <div className="font-display text-lg uppercase text-black">GAME DEV</div>
-                    <div className="text-[10px] font-mono text-slate-800 font-bold">PS5 & DualSense Rigs</div>
+                    <div className="font-display text-lg uppercase text-black">BUILD A GAME</div>
+                    <div className="text-[10px] font-mono text-slate-800 font-bold">Godot, Unity, Unreal</div>
                   </button>
 
                   {/* Web Dev */}
@@ -217,8 +217,8 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                     <div className="w-8 h-8 bg-[#d12323] text-white flex items-center justify-center border border-black mb-2 shadow-brutal-sm">
                       <Globe className="w-4 h-4" />
                     </div>
-                    <div className="font-display text-lg uppercase text-black">WEB DEV</div>
-                    <div className="text-[10px] font-mono text-slate-800 font-bold">Realtime IoT & WebRTC</div>
+                    <div className="font-display text-lg uppercase text-black">BUILD A WEBSITE</div>
+                    <div className="text-[10px] font-mono text-slate-800 font-bold">React, Full-stack Web Apps</div>
                   </button>
 
                   {/* Robotics */}
@@ -234,8 +234,8 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                     <div className="w-8 h-8 bg-[#d12323] text-white flex items-center justify-center border border-black mb-2 shadow-brutal-sm">
                       <Bot className="w-4 h-4" />
                     </div>
-                    <div className="font-display text-lg uppercase text-black">ROBOTICS</div>
-                    <div className="text-[10px] font-mono text-slate-800 font-bold">Drones & 3D Print Farm</div>
+                    <div className="font-display text-lg uppercase text-black">BUILD A ROBOT</div>
+                    <div className="text-[10px] font-mono text-slate-800 font-bold">Using provided hardware kit</div>
                   </button>
                 </div>
                 {errors.track && (
@@ -292,7 +292,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                       type="text"
                       value={formData.teamName}
                       onChange={(e) => setFormData({ ...formData, teamName: e.target.value })}
-                      placeholder="e.g. Apex Vanguard"
+                      placeholder="e.g. Apex Builders"
                       className="w-full text-xs font-mono bg-white text-black border-2 border-black p-2.5 shadow-brutal-sm focus:outline-none"
                     />
                     {errors.teamName && (
@@ -302,7 +302,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
 
                   <div>
                     <label className="block text-xs font-mono font-bold text-black mb-1">
-                      TEAM SIZE (HACKERS)
+                      TEAM SIZE (BUILDERS)
                     </label>
                     <select
                       value={formData.teamSize}
@@ -311,9 +311,9 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                       }
                       className="w-full text-xs font-mono font-bold bg-white text-black border-2 border-black p-2.5 shadow-brutal-sm focus:outline-none"
                     >
-                      <option value={2}>2 Hackers</option>
-                      <option value={3}>3 Hackers</option>
-                      <option value={4}>4 Hackers (Full Squad)</option>
+                      <option value={2}>2 Builders</option>
+                      <option value={3}>3 Builders</option>
+                      <option value={4}>4 Builders (Full Squad)</option>
                     </select>
                   </div>
                 </div>
@@ -336,8 +336,8 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                   >
                     <option value="Beginner">Beginner (1st or 2nd Hackathon)</option>
                     <option value="Intermediate">Intermediate (Comfortable building)</option>
-                    <option value="Advanced">Advanced (Shipped multiple projects)</option>
-                    <option value="Pro">Pro / Hardware Engineer</option>
+                    <option value="Advanced">Advanced (Shipped projects previously)</option>
+                    <option value="Pro">Pro / Seasoned Engineer</option>
                   </select>
                 </div>
 
@@ -357,22 +357,22 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
             </div>
           )}
 
-          {/* STEP 3: HARDWARE ZONE ACCESS & CONCEPT */}
+          {/* STEP 3: FUN ZONES & CONCEPT */}
           {step === 3 && (
             <div className="space-y-4">
               <div>
                 <label className="block text-xs font-mono font-black text-black uppercase tracking-wider mb-1">
-                  EVENT HARDWARE ZONES (SELECT WHAT YOU PLAN TO ACCESS):
+                  WHICH ON-SITE FUN ZONES DO YOU PLAN TO VISIT DURING BREAKS?
                 </label>
                 <p className="text-[11px] font-mono text-neutral-600 mb-2.5">
-                  Select the specialized equipment stations you plan to use for your build:
+                  (Note: PS5, Drones, and 3D Printers are strictly just for fun and downtime!)
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {[
-                    'PlayStation 5 Dev Rig (DualSense + 4K 144Hz)',
-                    'Autonomous Drone Flight Arena Slot',
-                    '3D Printing & Prototyping Farm (Bambu Lab)',
-                    'Software Only / Laptop (No Hardware Rig Needed)',
+                    'PlayStation 5 Gaming Lounge (Just for Fun)',
+                    'Indoor Drone Flying Arena (Just for Fun)',
+                    '3D Printing Souvenirs Station (Just for Fun)',
+                    'Straight to Building (Focus on Project)',
                   ].map((hw) => {
                     const isChecked = formData.hardwareRequests.includes(hw);
                     return (
@@ -404,13 +404,16 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
 
               <div>
                 <label className="block text-xs font-mono font-bold text-black mb-1">
-                  ELEVATOR PITCH (WHAT WILL YOU BUILD?) *
+                  PRELIMINARY PROJECT CONCEPT / INTEREST *
                 </label>
+                <p className="text-[11px] font-mono text-neutral-600 mb-1.5">
+                  Tell us what kind of website, game, or robot you love building (you will adapt this to the official topic announced at kickoff):
+                </p>
                 <textarea
                   rows={3}
                   value={formData.projectConcept}
                   onChange={(e) => setFormData({ ...formData, projectConcept: e.target.value })}
-                  placeholder="Describe your technical build idea across the 12H+12H sprints (e.g. autonomous drone optical obstacle solver or a PS5 haptic game)..."
+                  placeholder="e.g. We plan to build an interactive physics game in Godot, or an autonomous wheeled robot with obstacle avoidance..."
                   className="w-full text-xs font-mono bg-white text-black border-2 border-black p-2.5 shadow-brutal-sm focus:outline-none"
                 />
                 {errors.projectConcept && (
@@ -445,7 +448,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
 
                 <div>
                   <label className="block text-xs font-mono font-bold text-black mb-1">
-                    SWAG HOODIE SIZE
+                    SWAG T-SHIRT / HOODIE SIZE
                   </label>
                   <select
                     value={formData.tshirtSize}
@@ -471,9 +474,9 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                   12H + 12H DUAL-DAY CODE OF INTEGRITY:
                 </div>
                 <div className="text-slate-800 space-y-1">
-                  <p>1. 12H Sprint on Day 1 (09:00 - 21:00) · 12H Sprint on Day 2 (09:00 - 21:00).</p>
-                  <p>2. Flight cage operations are strictly confined within netted boundary.</p>
-                  <p>3. Zero vaporware slides; projects must demonstrate real code & hardware.</p>
+                  <p>1. 12H Sprint on Day 1 (09:00 - 21:00) · Overnight Rest · 12H Sprint on Day 2 (09:00 - 21:00).</p>
+                  <p>2. Topic and Hardware Resources will be provided at kickoff; squads build Websites, Games, or Robots.</p>
+                  <p>3. PS5, Drones, and 3D Printers are strictly for fun and leisure during breaks.</p>
                 </div>
 
                 <label className="flex items-start gap-2.5 pt-2 border-t border-black cursor-pointer font-bold text-black">
@@ -483,7 +486,7 @@ export const RegistrationModal: React.FC<RegistrationModalProps> = ({
                     onChange={(e) => setFormData({ ...formData, acceptRules: e.target.checked })}
                     className="mt-0.5 accent-black"
                   />
-                  <span>I agree to the 12H+12H schedule & hardware lab safety rules.</span>
+                  <span>I agree to the 12H+12H schedule, competition rules, and understand PS5/drones/3D printers are strictly just for fun.</span>
                 </label>
                 {errors.acceptRules && (
                   <p className="text-[#d12323] font-bold">{errors.acceptRules}</p>

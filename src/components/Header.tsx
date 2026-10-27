@@ -42,7 +42,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenRegister, registeredCount 
             Manifesto
           </a>
           <a href="#hardware" className="hover:text-[#ffe600] hover:underline decoration-2 underline-offset-4 transition-colors">
-            Hardware Zones
+            Fun Zones (PS5 · Drones · 3D)
           </a>
           <a href="#tracks" className="hover:text-[#ffe600] hover:underline decoration-2 underline-offset-4 transition-colors">
             Tracks
@@ -103,14 +103,14 @@ export const Header: React.FC<HeaderProps> = ({ onOpenRegister, registeredCount 
             onClick={() => setMobileMenuOpen(false)}
             className="block py-1.5 text-white hover:text-[#ffe600]"
           >
-            Hardware (PS5 · Drones · 3D Printers)
+            Fun Zones (PS5 · Drones · 3D Printers)
           </a>
           <a
             href="#tracks"
             onClick={() => setMobileMenuOpen(false)}
             className="block py-1.5 text-white hover:text-[#ffe600]"
           >
-            Tracks (Game Dev, Web Dev, Robotics)
+            Tracks (Websites, Games, Robots)
           </a>
           <a
             href="#format"

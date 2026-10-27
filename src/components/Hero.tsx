@@ -32,7 +32,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenRegister, onOpenQuiz, onSelect
 
   return (
     <section id="manifesto" className="relative overflow-hidden bg-[#d12323] pt-12 pb-20 lg:pt-16 lg:pb-24 grain-texture">
-      {/* Giant Watermark Typography matching screenshot */}
+      {/* Giant Watermark Typography matching user screenshot */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full select-none pointer-events-none overflow-hidden opacity-15">
         <div className="font-display text-[16vw] font-black text-black leading-none whitespace-nowrap tracking-tighter text-center">
           PHILOSOPHY //
@@ -73,17 +73,27 @@ export const Hero: React.FC<HeroProps> = ({ onOpenRegister, onOpenQuiz, onSelect
 
         {/* Two-Column Split matching screenshot */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left 7 Columns: Prose & Yellow Action Button */}
+          {/* Left 7 Columns: Core Concept & Action Buttons */}
           <div className="lg:col-span-7 space-y-5">
-            <p className="text-base sm:text-lg font-bold text-white leading-relaxed">
-              A two-day hackathon where ambitious builders assemble to engineer, experiment, tackle authentic engineering challenges, and ship working prototypes.
+            <p className="text-base sm:text-xl font-black text-white leading-relaxed">
+              At kickoff, you will be provided with an official <span className="bg-[#ffe600] text-black px-1.5 py-0.5 border border-black">Topic</span> and <span className="bg-[#ffe600] text-black px-1.5 py-0.5 border border-black">Hardware Resources</span>. Your squad&apos;s mission is to build a <span className="underline decoration-[#ffe600] decoration-3 underline-offset-4">Website</span>, a <span className="underline decoration-[#ffe600] decoration-3 underline-offset-4">Game</span>, or a <span className="underline decoration-[#ffe600] decoration-3 underline-offset-4">Robot</span> across a realistic 12H + 12H two-day event (24 hours total).
             </p>
 
-            <p className="text-sm sm:text-base text-white/90 leading-relaxed font-medium">
-              No hollow slide decks or vaporware. Whether it&apos;s physics engines in Godot, real-time reactive websockets in React, or autonomous telemetry circuits on ESP32, Falling Sun celebrates the craft of shipping real systems.
-            </p>
+            <div className="p-4 bg-black/40 border-2 border-white/70 space-y-2">
+              <div className="flex items-center gap-2">
+                <span className="bg-[#ffe600] text-black font-mono font-black text-[11px] px-2 py-0.5 border border-black uppercase">
+                  VENUE ENTERTAINMENT
+                </span>
+                <span className="text-xs font-mono font-bold text-white uppercase tracking-wider">
+                  JUST FOR FUN · CHILL ZONES
+                </span>
+              </div>
+              <p className="text-xs sm:text-sm text-white/95 leading-relaxed font-semibold">
+                Need a break from coding? The venue features a <strong>PlayStation 5 gaming lounge</strong>, an <strong>indoor drone flight arena</strong>, and <strong>3D souvenir printers</strong> — available strictly just for fun and relaxation!
+              </p>
+            </div>
 
-            <div className="flex flex-wrap items-center gap-4 pt-3">
+            <div className="flex flex-wrap items-center gap-4 pt-2">
               <a
                 href="#format"
                 className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#ffe600] hover:bg-[#ffd900] text-black border-2 border-black font-mono font-black text-xs sm:text-sm uppercase tracking-wider shadow-brutal hover:translate-x-0.5 hover:translate-y-0.5 transition-all cursor-pointer"
@@ -124,12 +134,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenRegister, onOpenQuiz, onSelect
                 <div className="w-9 h-9 bg-[#d12323] border border-black flex items-center justify-center text-white shrink-0 shadow-brutal-sm">
                   <Gamepad2 className="w-5 h-5" />
                 </div>
-                <div className="font-display text-lg font-black tracking-wide text-black group-hover:text-[#d12323] uppercase">
-                  GAME DEVELOPMENT
+                <div>
+                  <div className="font-display text-lg font-black tracking-wide text-black group-hover:text-[#d12323] uppercase leading-none">
+                    GAME DEVELOPMENT
+                  </div>
+                  <div className="text-[10px] font-mono text-slate-700 font-bold mt-1">
+                    Build a playable Game for the topic
+                  </div>
                 </div>
               </div>
 
-              <span className="bg-[#ffe600] border border-black text-black text-[11px] font-mono font-black px-2.5 py-0.5 shadow-brutal-sm">
+              <span className="bg-[#ffe600] border border-black text-black text-[11px] font-mono font-black px-2.5 py-0.5 shadow-brutal-sm shrink-0">
                 TRACK 01
               </span>
             </div>
@@ -147,12 +162,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenRegister, onOpenQuiz, onSelect
                 <div className="w-9 h-9 bg-[#d12323] border border-black flex items-center justify-center text-white shrink-0 shadow-brutal-sm">
                   <Globe className="w-5 h-5" />
                 </div>
-                <div className="font-display text-lg font-black tracking-wide text-black group-hover:text-[#d12323] uppercase">
-                  WEB DEVELOPMENT
+                <div>
+                  <div className="font-display text-lg font-black tracking-wide text-black group-hover:text-[#d12323] uppercase leading-none">
+                    WEB DEVELOPMENT
+                  </div>
+                  <div className="text-[10px] font-mono text-slate-700 font-bold mt-1">
+                    Build an interactive Website for the topic
+                  </div>
                 </div>
               </div>
 
-              <span className="bg-[#ffe600] border border-black text-black text-[11px] font-mono font-black px-2.5 py-0.5 shadow-brutal-sm">
+              <span className="bg-[#ffe600] border border-black text-black text-[11px] font-mono font-black px-2.5 py-0.5 shadow-brutal-sm shrink-0">
                 TRACK 02
               </span>
             </div>
@@ -170,12 +190,17 @@ export const Hero: React.FC<HeroProps> = ({ onOpenRegister, onOpenQuiz, onSelect
                 <div className="w-9 h-9 bg-[#d12323] border border-black flex items-center justify-center text-white shrink-0 shadow-brutal-sm">
                   <Bot className="w-5 h-5" />
                 </div>
-                <div className="font-display text-lg font-black tracking-wide text-black group-hover:text-[#d12323] uppercase">
-                  ROBOTICS
+                <div>
+                  <div className="font-display text-lg font-black tracking-wide text-black group-hover:text-[#d12323] uppercase leading-none">
+                    ROBOTICS
+                  </div>
+                  <div className="text-[10px] font-mono text-slate-700 font-bold mt-1">
+                    Build a Robot with provided hardware kit
+                  </div>
                 </div>
               </div>
 
-              <span className="bg-[#ffe600] border border-black text-black text-[11px] font-mono font-black px-2.5 py-0.5 shadow-brutal-sm">
+              <span className="bg-[#ffe600] border border-black text-black text-[11px] font-mono font-black px-2.5 py-0.5 shadow-brutal-sm shrink-0">
                 TRACK 03
               </span>
             </div>
@@ -186,7 +211,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenRegister, onOpenQuiz, onSelect
         <div className="mt-12 p-4 bg-[#fffdf8] border-2 border-black shadow-brutal flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-black font-mono font-black text-xs uppercase tracking-wider">
             <Clock className="w-4 h-4 text-[#d12323]" />
-            <span>COUNTDOWN TO SOLAR PHASE 01 KICKOFF</span>
+            <span>COUNTDOWN TO DAY 1 TOPIC RELEASE & KICKOFF</span>
           </div>
 
           <div className="flex items-center gap-3 text-black">

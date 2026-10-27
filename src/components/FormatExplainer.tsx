@@ -1,5 +1,5 @@
 import React from 'react';
-import { Clock, Calendar, Moon, Sun, CheckCircle2 } from 'lucide-react';
+import { Calendar, Moon, Sun, Sparkles, Smile, Clock } from 'lucide-react';
 
 export const FormatExplainer: React.FC = () => {
   return (
@@ -17,8 +17,8 @@ export const FormatExplainer: React.FC = () => {
             24 HOURS TOTAL · SPLIT OVER TWO DAYS
           </h2>
 
-          <p className="text-base sm:text-lg text-white font-bold max-w-2xl leading-relaxed">
-            A realistic 2-day event structured as <strong>12 hours on Day 1</strong> and <strong>12 hours on Day 2</strong>. No exhausting all-nighters — code intensely during the day, rest at night, and come back fresh.
+          <p className="text-base sm:text-lg text-white font-bold max-w-3xl leading-relaxed">
+            A realistic 2-day hackathon structured as <strong>12 hours on Day 1</strong> and <strong>12 hours on Day 2</strong>. At kickoff, an official <strong>Topic</strong> and <strong>Hardware Resources</strong> will be revealed so you can build a Website, Game, or Robot. Our PS5, Drone, and 3D print zones are open strictly for fun!
           </p>
         </div>
 
@@ -46,29 +46,33 @@ export const FormatExplainer: React.FC = () => {
               </div>
 
               <p className="text-xs sm:text-sm font-semibold text-neutral-800 leading-relaxed">
-                Check-in, project brainstorming, team formation, and core software & robotics building. The PS5, Drone, and 3D printing zones open immediately.
+                Check-in, topic reveal, hardware resource handoff, and core building. Squads begin making their website, game, or robot. PS5, Drone arena, and 3D printing fun zones open for downtime!
               </p>
 
               <div className="bg-[#f6efe4] p-4 border-2 border-black space-y-2.5 text-xs font-mono font-bold">
                 <div className="flex items-start gap-2">
-                  <span className="text-[#c51c1c] font-black">09:00 AM</span>
+                  <span className="text-[#c51c1c] font-black shrink-0">09:00 AM</span>
                   <span className="text-neutral-900">Doors open & Participant Check-in</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <span className="text-[#c51c1c] font-black">10:00 AM</span>
-                  <span className="text-neutral-900">Official Kickoff & Coding Begins (Game Dev, Web Dev, Robotics)</span>
+                  <span className="text-[#c51c1c] font-black shrink-0">09:45 AM</span>
+                  <span className="text-neutral-900">Official Kickoff: Secret Topic Revealed & Hardware Resources Distributed</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <span className="text-[#c51c1c] font-black">11:00 AM</span>
-                  <span className="text-neutral-900">PS5, Drone flight arena & 3D printing paid zones open</span>
+                  <span className="text-[#c51c1c] font-black shrink-0">10:15 AM</span>
+                  <span className="text-neutral-900">Coding & Building Begins (Build a Website, Game, or Robot)</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <span className="text-[#c51c1c] font-black">01:30 PM</span>
+                  <span className="text-[#c51c1c] font-black shrink-0">11:30 AM</span>
+                  <span className="text-neutral-900">Fun Zones Open (PS5 gaming lounge, drone flight cage & 3D print souvenir station open just for fun)</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-[#c51c1c] font-black shrink-0">01:30 PM</span>
                   <span className="text-neutral-900">Lunch Break & Networking</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <span className="text-[#c51c1c] font-black">09:00 PM</span>
-                  <span className="text-neutral-900">Day 1 Ends — Venue closes for the night so everyone can rest</span>
+                  <span className="text-[#c51c1c] font-black shrink-0">09:00 PM</span>
+                  <span className="text-neutral-900">Day 1 Ends (12 hours complete) — Venue closes for the night so everyone can rest</span>
                 </div>
               </div>
             </div>
@@ -101,29 +105,29 @@ export const FormatExplainer: React.FC = () => {
               </div>
 
               <p className="text-xs sm:text-sm font-semibold text-neutral-800 leading-relaxed">
-                Resume development with clear minds. Finalize features, polish UI, test robotics and game builds, followed by live stage project demos and closing ceremony.
+                Resume building with clear minds. Finalize features, polish interfaces, test games & robots, followed by live stage demonstrations of what you built!
               </p>
 
               <div className="bg-[#f6efe4] p-4 border-2 border-black space-y-2.5 text-xs font-mono font-bold">
                 <div className="flex items-start gap-2">
-                  <span className="text-[#c51c1c] font-black">09:00 AM</span>
-                  <span className="text-neutral-900">Day 2 Resumes — Morning tea & final build sprint starts</span>
+                  <span className="text-[#c51c1c] font-black shrink-0">09:00 AM</span>
+                  <span className="text-neutral-900">Day 2 Resumes — Morning coffee & final build push</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <span className="text-[#c51c1c] font-black">01:00 PM</span>
-                  <span className="text-neutral-900">Lunch Break</span>
+                  <span className="text-[#c51c1c] font-black shrink-0">01:00 PM</span>
+                  <span className="text-neutral-900">Lunch Break & Stage Demo Preparation</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <span className="text-[#c51c1c] font-black">05:00 PM</span>
-                  <span className="text-neutral-900">Code Freeze & Project Submission deadline</span>
+                  <span className="text-[#c51c1c] font-black shrink-0">05:00 PM</span>
+                  <span className="text-neutral-900">Code & Robot Build Freeze: Final Submission</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <span className="text-[#c51c1c] font-black">06:00 PM</span>
-                  <span className="text-neutral-900">Live Project Demonstrations on Stage</span>
+                  <span className="text-[#c51c1c] font-black shrink-0">06:00 PM</span>
+                  <span className="text-neutral-900">Live Stage Project Demonstrations (Websites, Games & Robots)</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <span className="text-[#c51c1c] font-black">08:30 PM</span>
-                  <span className="text-neutral-900">Closing Ceremony & Certificate Distribution</span>
+                  <span className="text-[#c51c1c] font-black shrink-0">08:30 PM</span>
+                  <span className="text-neutral-900">Closing Ceremony, Certificate Distribution & Celebration</span>
                 </div>
               </div>
             </div>
@@ -140,11 +144,11 @@ export const FormatExplainer: React.FC = () => {
           <div className="flex items-center gap-3">
             <Moon className="w-5 h-5 text-[#ffe600] shrink-0" />
             <div className="font-mono text-xs text-neutral-200">
-              <strong className="text-[#ffe600]">OVERNIGHT PAUSE (09:00 PM to 09:00 AM):</strong> Participants go home or to accommodations to sleep. The venue is closed overnight.
+              <strong className="text-[#ffe600]">OVERNIGHT REST (09:00 PM to 09:00 AM):</strong> Participants go home or to accommodations to sleep. The venue is closed overnight so you recharge properly for Day 2.
             </div>
           </div>
           <span className="font-mono font-black text-xs bg-[#ffe600] text-black px-3 py-1 border border-black whitespace-nowrap">
-            TOTAL = 24 HOURS OF CODING
+            TOTAL = 24 HOURS (12H + 12H)
           </span>
         </div>
       </div>
