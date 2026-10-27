@@ -1,0 +1,6 @@
+{
+  "name": "FALLING SUN 2026 - 12H+12H Dual-Day Hackathon",
+  "description": "FALLING SUN 2026: Premier 2-day hackathon (12H + 12H format) bringing raw imagination into functional builds across Game Dev, Web Dev, and Robotics with PS5, autonomous drones, and 3D printers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

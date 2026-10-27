@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-display: 'Bebas Neue', 'Anton', Impact, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #d12323;
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: 0.03em;
+  }
+}
+
+.font-display {
+  font-family: 'Bebas Neue', 'Anton', Impact, sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.font-mono-nums {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Hard Brutalist Shadows */
+.shadow-brutal {
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.shadow-brutal-sm {
+  box-shadow: 2.5px 2.5px 0px #000000;
+}
+
+.shadow-brutal-lg {
+  box-shadow: 6px 6px 0px #000000;
+}
+
+.shadow-brutal-yellow {
+  box-shadow: 4px 4px 0px #ffe600;
+}
+
+/* Stencil Drop Shadow for Titles */
+.drop-shadow-brutal {
+  filter: drop-shadow(3px 3px 0px #000000);
+}
+
+.drop-shadow-brutal-lg {
+  filter: drop-shadow(5px 5px 0px #000000);
+}
+
+/* Grain Overlay */
+.grain-texture {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+/* Postage stamp scalloped border */
+.stamp-card {
+  position: relative;
+  background-color: #fdf8ee;
+  border: 2px solid #000000;
+  box-shadow: 5px 5px 0px #000000;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #a81717;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffe600;
+  border: 2px solid #000000;
+}
